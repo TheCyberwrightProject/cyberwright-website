@@ -41,41 +41,53 @@
         transparent 360deg
     );
     border-radius: 50%;
-    width: 500px;
-    height: 350px;
+    width: 20vw;
+    height: 25vw;
     filter: blur(90px);
     top: calc(50vh - 50vw / 2);
-    left: calc(50vw);
+    left: calc(50vw - 50vw / 2);
 }
 
 @keyframes animateb1 {
     0% {
-        transform: translateY(0) scale(1);
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(100px, -50px) scale(0.8);
     }
     50% {
-        transform: translateY(200px) scale(0.6);
+        transform: translate(200px, 150px) scale(0.6);
+    }
+    75% {
+        transform: translate(50px, 300px) scale(0.9);
     }
     100% {
-        transform: translateY(0) scale(1);
+        transform: translate(0, 0) scale(1);
     }
 }
 
 @keyframes animateb2 {
     0% {
-        transform: translateX(0) scale(1);
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(-100px, 50px) scale(0.9);
     }
     50% {
-        transform: translateX(-250px) scale(1.2);
+        transform: translate(-250px, 100px) scale(0.7);
+    }
+    75% {
+        transform: translate(-150px, -100px) scale(0.8);
     }
     100% {
-        transform: translateX(0) scale(1);
+        transform: translate(0, 0) scale(1);
     }
 }
 
 .blob1 {
-    animation: animateb1 15s 3s linear infinite;
+    animation: animateb1 15s linear infinite;
 }
 
 .blob2 {
-    animation: animateb2 15s 3s linear infinite;
+    animation: animateb2 15s linear infinite;
 }

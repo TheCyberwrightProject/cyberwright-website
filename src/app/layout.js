@@ -2,7 +2,7 @@ import "./globals.css";
 import { Providers } from "./Providers";
 import { Nunito } from "next/font/google"
 
-const nunito = Nunito({})
+const nunito = Nunito({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Cyberwright",

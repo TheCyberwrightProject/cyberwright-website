@@ -8,8 +8,10 @@ import { Button } from "@nextui-org/button";
 import { Waypoints } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { Link } from "@nextui-org/link";
+import { Modal, ModalBody, ModalContent, useDisclosure } from "@nextui-org/react";
 
 export default function Home() {
+  const {isOpen, onOpen, onClose} = useDisclosure();
   const b1ref = useRef(null);
   const b2ref = useRef(null);
 
@@ -54,7 +56,7 @@ export default function Home() {
 
   return (
     <div className="h-screen w-full flex flex-col">
-      <CustomNavbar />
+      <CustomNavbar openModal={onOpen}/>
       <div className="text-center mt-20">
         <Chip color="success" variant="dot">Empowering Code Security</Chip>
         <h1 className="text-5xl font-extrabold sm:text-7xl">Cyberwright</h1>
@@ -119,6 +121,16 @@ export default function Home() {
       <Footer />
       <div className="blob1" ref={b1ref}></div>
       <div className="blob2" ref={b2ref}></div>
+      <Modal size="xl" isOpen={isOpen} onClose={onClose}>
+        <ModalContent>
+          <ModalBody>
+            <Image 
+              src="/frame.png"
+              className="py-6"
+            />
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </div>
   );
 }
